@@ -99,11 +99,11 @@ export default function EducationSection() {
             >
 
 
-              <div className="card-modern p-8 hover:shadow-xl transition-all duration-300">
-                <div className="flex flex-col gap-8">
+              <div className="card-modern p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-all duration-300">
+                <div className="flex flex-col gap-6 sm:gap-8">
                   {/* Header Section */}
-                  <div className="flex items-start gap-6">
-                    <div className="relative w-24 h-24 flex-shrink-0">
+                  <div className="flex items-start gap-4 sm:gap-6">
+                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex-shrink-0">
                       <Image
                         src={education.logo}
                         alt={`${education.title} logo`}
@@ -111,22 +111,22 @@ export default function EducationSection() {
                         className="object-contain rounded-lg"
                       />
                     </div>
-                    <div className="flex-1">
-                      <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-3">
-                        <GraduationCap className="h-4 w-4" />
+                    <div className="flex-1 min-w-0">
+                      <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-2 sm:mb-3">
+                        <GraduationCap className="h-3 w-3 sm:h-4 sm:w-4" />
                         {education.type}
                       </div>
-                      <h3 className="text-2xl font-bold text-foreground leading-tight mb-4">
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground leading-tight mb-3 sm:mb-4">
                         {education.title}
                       </h3>
-                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4 text-primary" />
+                      <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
+                        <div className="flex items-center gap-1 sm:gap-2">
+                          <Calendar className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
                           <span className="font-medium">{education.period}</span>
                         </div>
                         {education.location && (
-                          <div className="flex items-center gap-2">
-                            <MapPin className="h-4 w-4 text-primary" />
+                          <div className="flex items-center gap-1 sm:gap-2">
+                            <MapPin className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
                             <span className="font-medium">{education.location}</span>
                           </div>
                         )}
@@ -135,20 +135,20 @@ export default function EducationSection() {
                   </div>
 
                   {/* Content Section */}
-                  <div className="space-y-6">
+                  <div className="space-y-4 sm:space-y-6">
                     {/* Semesters for BDMA */}
                     {education.semesters && (
-                      <div className="space-y-4 mb-6">
+                      <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
                         {education.semesters.map((semester, semIndex) => (
                           <motion.div
                             key={semester.semester}
-                            className="flex items-start gap-6 p-6 bg-secondary/30 rounded-lg border border-border hover:border-primary/30 transition-colors"
+                            className="flex items-start gap-3 sm:gap-6 p-3 sm:p-6 bg-secondary/30 rounded-lg border border-border hover:border-primary/30 transition-colors"
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 * semIndex }}
                             viewport={{ once: true }}
                           >
-                            <div className="relative w-24 h-24 flex-shrink-0">
+                            <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex-shrink-0">
                               <Image
                                 src={semester.logo}
                                 alt={`${semester.university} logo`}
@@ -157,20 +157,20 @@ export default function EducationSection() {
                               />
                             </div>
                             <div className="flex-1 min-w-0">
-                              <div className="mb-2">
-                                <span className="font-bold text-primary text-lg">
+                              <div className="mb-1 sm:mb-2">
+                                <span className="font-bold text-primary text-sm sm:text-base lg:text-lg">
                                   {semester.semester}
                                 </span>
                               </div>
-                              <h4 className="text-foreground font-semibold text-lg mb-2">
+                              <h4 className="text-foreground font-semibold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2">
                                 {semester.university}
                               </h4>
-                              <div className="space-y-1 text-sm text-muted-foreground">
-                                <div className="flex items-center gap-2">
-                                  <MapPin className="h-4 w-4 text-primary" />
+                              <div className="space-y-1 text-xs sm:text-sm text-muted-foreground">
+                                <div className="flex items-center gap-1 sm:gap-2">
+                                  <MapPin className="h-3 w-3 sm:h-4 sm:w-4 text-primary" />
                                   <span>{semester.location}</span>
                                 </div>
-                                <div className="italic font-medium text-foreground">
+                                <div className="italic font-medium text-foreground text-xs sm:text-sm">
                                   {semester.degree}
                                 </div>
                               </div>
@@ -182,18 +182,18 @@ export default function EducationSection() {
 
                     {/* Achievements for IISER */}
                     {education.achievements && (
-                      <div className="space-y-3 mb-6">
+                      <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
                         {education.achievements.map((achievement, achIndex) => (
                           <motion.div
                             key={achievement}
-                            className="flex items-start gap-3"
+                            className="flex items-start gap-2 sm:gap-3"
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ delay: 0.1 * achIndex }}
                             viewport={{ once: true }}
                           >
-                            <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2" />
-                            <span className="text-muted-foreground leading-relaxed">{achievement}</span>
+                            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary flex-shrink-0 mt-1.5 sm:mt-2" />
+                            <span className="text-muted-foreground leading-relaxed text-sm sm:text-base">{achievement}</span>
                           </motion.div>
                         ))}
                       </div>

@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, ExternalLink, Github, Code, Award, Zap, Bot, Trophy, Target, Brain } from "lucide-react";
+import { Github, Bot, Trophy, Target, Brain, Zap, Award, Code, Calendar, ExternalLink } from "lucide-react";
+import ProjectSlider from "@/components/ui/ProjectSlider";
 
 const projectsData = [
   {
@@ -24,7 +25,7 @@ const projectsData = [
     },
     icon: Bot,
     color: "from-cyan-500 to-blue-600",
-    type: "Personal Project",
+    type: "Personal Project"
   },
   {
     id: "revpoints-plus",
@@ -50,7 +51,7 @@ const projectsData = [
     },
     icon: Target,
     color: "from-green-500 to-emerald-600",
-    type: "Hackathon",
+    type: "Hackathon"
   },
   {
     id: "splat-space-diffusion",
@@ -70,7 +71,7 @@ const projectsData = [
     },
     icon: Brain,
     color: "from-purple-500 to-pink-600",
-    type: "Research",
+    type: "Research"
   },
   {
     id: "medireels",
@@ -89,7 +90,7 @@ const projectsData = [
     },
     icon: Trophy,
     color: "from-emerald-500 to-teal-600",
-    type: "Hackathon",
+    type: "Hackathon"
   },
   {
     id: "spicybytes",
@@ -111,7 +112,7 @@ const projectsData = [
     },
     icon: Zap,
     color: "from-orange-500 to-red-600",
-    type: "Startup",
+    type: "Startup"
   },
   {
     id: "klinic",
@@ -133,27 +134,11 @@ const projectsData = [
     },
     icon: Award,
     color: "from-blue-500 to-indigo-600",
-    type: "Hackathon",
+    type: "Hackathon"
   },
 ];
 
 export default function ProjectsSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: { y: 0, opacity: 1 },
-  };
-
   return (
     <section id="projects" className="py-20 lg:py-32 bg-secondary/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -168,163 +153,14 @@ export default function ProjectsSection() {
           <h2 className="heading-lg text-foreground mb-4">Featured Projects</h2>
         </motion.div>
 
+        {/* Project Slider */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {projectsData.map((project) => {
-            const Icon = project.icon;
-            return (
-              <motion.div
-                key={project.id}
-                variants={itemVariants}
-                className="card-modern p-6 lg:p-8 hover:shadow-xl transition-all duration-500 group flex flex-col h-full"
-              >
-                {/* Project Header */}
-                <div className="flex items-start gap-4 mb-6">
-                  <div className={`relative w-16 h-16 flex-shrink-0 rounded-xl bg-gradient-to-br ${project.color} p-3 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className="w-full h-full text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                        <Code className="h-4 w-4" />
-                        {project.type}
-                      </div>
-                      <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium ${
-                        project.status === "Completed" 
-                          ? "bg-emerald-500/10 text-emerald-700 dark:text-emerald-400"
-                          : "bg-amber-500/10 text-amber-700 dark:text-amber-400"
-                      }`}>
-                        {project.status}
-                      </div>
-                    </div>
-                    <h3 className="text-xl lg:text-2xl font-bold text-foreground leading-tight group-hover:text-primary transition-colors duration-300 mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {project.category}
-                    </p>
-                  </div>
-                </div>
-
-                                  {/* Project Details */}
-                  <div className="mb-6 flex-grow">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-                      <Calendar className="h-4 w-4 text-primary" />
-                      <span>{project.period}</span>
-                    </div>
-
-                    <p className="text-muted-foreground leading-relaxed mb-6">
-                      {project.description}
-                    </p>
-
-                  {/* Technologies */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <Zap className="h-5 w-5 text-primary" />
-                      Technologies
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <motion.span
-                          key={tech}
-                          className="px-3 py-1.5 bg-primary/10 hover:bg-primary/20 text-primary text-sm font-medium rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 cursor-default"
-                          whileHover={{ scale: 1.05, y: -2 }}
-                        >
-                          {tech}
-                        </motion.span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Key Achievements */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <Award className="h-5 w-5 text-primary" />
-                      Key Achievements
-                    </h4>
-                    <div className="space-y-2">
-                      {project.achievements.map((achievement, achievementIndex) => (
-                        <motion.div
-                          key={achievementIndex}
-                          className="flex items-start gap-3 group/achievement"
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.1 * achievementIndex }}
-                          viewport={{ once: true }}
-                        >
-                          <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0 mt-2 group-hover/achievement:scale-150 transition-transform duration-300" />
-                          <span className="text-muted-foreground text-sm leading-relaxed group-hover/achievement:text-foreground transition-colors duration-300">
-                            {achievement}
-                          </span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Project Links */}
-                <div className="flex flex-wrap gap-3 mt-auto">
-                  {project.links.github && (
-                    <motion.a
-                      href={project.links.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary flex items-center gap-2"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Github className="h-4 w-4" />
-                      View on GitHub
-                    </motion.a>
-                  )}
-                  {project.links.demo && (
-                    <motion.a
-                      href={project.links.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={project.links.github ? "btn-outline flex items-center gap-2" : "btn-primary flex items-center gap-2"}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                      {project.links.demo.includes('devpost') ? 'View on Devpost' : 'View Project'}
-                    </motion.a>
-                  )}
-                  {project.links.consumerApp && (
-                    <motion.a
-                      href={project.links.consumerApp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-outline flex items-center gap-2"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                      Consumer App
-                    </motion.a>
-                  )}
-                  {project.links.vendorApp && (
-                    <motion.a
-                      href={project.links.vendorApp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-outline flex items-center gap-2"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                      Vendor App
-                    </motion.a>
-                  )}
-                </div>
-              </motion.div>
-            );
-          })}
+          <ProjectSlider projects={projectsData} />
         </motion.div>
 
         {/* View More Section */}
@@ -347,8 +183,6 @@ export default function ProjectsSection() {
             View More Projects on GitHub
           </motion.a>
         </motion.div>
-
-
       </div>
     </section>
   );

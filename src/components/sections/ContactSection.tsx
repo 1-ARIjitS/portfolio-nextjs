@@ -144,7 +144,7 @@ export default function ContactSection() {
           <h2 className="heading-lg text-foreground mb-4">Get In Touch</h2>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:items-stretch">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 lg:items-stretch">
           {/* Contact Information */}
           <motion.div
             className="lg:col-span-1 flex"
@@ -153,14 +153,14 @@ export default function ContactSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.div variants={itemVariants} className="card-modern p-8 w-full flex flex-col">
-              <h3 className="heading-md text-foreground mb-8 flex items-center gap-3">
-                <Mail className="h-8 w-8 text-primary" />
+            <motion.div variants={itemVariants} className="card-modern p-6 sm:p-8 w-full flex flex-col">
+              <h3 className="heading-md text-foreground mb-6 sm:mb-8 flex items-center gap-3">
+                <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 Contact Information
               </h3>
 
               <div className="flex-1 flex flex-col">
-                <div className="space-y-6 flex-1">
+                <div className="space-y-4 sm:space-y-6 flex-1">
                   {contactInfo.map((contact) => {
                     const Icon = contact.icon;
                     return (
@@ -169,18 +169,18 @@ export default function ContactSection() {
                         href={contact.href}
                         target={contact.href.startsWith("http") ? "_blank" : undefined}
                         rel={contact.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                        className="flex items-center gap-4 p-4 rounded-lg hover:bg-secondary/50 transition-all duration-300 group"
+                        className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg hover:bg-secondary/50 transition-all duration-300 group"
                         variants={itemVariants}
                         whileHover={{ scale: 1.02, y: -2 }}
                       >
-                        <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${contact.color} p-3 group-hover:scale-110 transition-transform duration-300`}>
+                        <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br ${contact.color} p-2 sm:p-3 group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
                           <Icon className="w-full h-full text-white" />
                         </div>
-                        <div>
-                          <p className="font-medium text-foreground group-hover:text-primary transition-colors duration-300">
+                        <div className="min-w-0 flex-1">
+                          <p className="font-medium text-foreground group-hover:text-primary transition-colors duration-300 text-sm sm:text-base">
                             {contact.label}
                           </p>
-                          <p className="text-sm text-muted-foreground">
+                          <p className="text-xs sm:text-sm text-muted-foreground truncate">
                             {contact.value}
                           </p>
                         </div>
@@ -235,17 +235,17 @@ export default function ContactSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.div variants={itemVariants} className="card-modern p-8 w-full flex flex-col">
-              <h3 className="heading-md text-foreground mb-8 flex items-center gap-3">
-                <Send className="h-8 w-8 text-primary" />
+            <motion.div variants={itemVariants} className="card-modern p-6 sm:p-8 w-full flex flex-col">
+              <h3 className="heading-md text-foreground mb-6 sm:mb-8 flex items-center gap-3">
+                <Send className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
                 Send me a message
               </h3>
 
               <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
-                <div className="space-y-6 flex-1">
-                  <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4 sm:space-y-6 flex-1">
+                  <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                      <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-foreground mb-2">
                         Name *
                       </label>
                       <input
@@ -255,12 +255,12 @@ export default function ContactSection() {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 text-foreground placeholder-muted-foreground"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-secondary border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 text-foreground placeholder-muted-foreground text-sm sm:text-base"
                         placeholder="Your full name"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-foreground mb-2">
                         Email *
                       </label>
                       <input
@@ -270,14 +270,14 @@ export default function ContactSection() {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 text-foreground placeholder-muted-foreground"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-secondary border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 text-foreground placeholder-muted-foreground text-sm sm:text-base"
                         placeholder="your.email@example.com"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="subject" className="block text-xs sm:text-sm font-medium text-foreground mb-2">
                       Subject
                     </label>
                     <input
@@ -286,13 +286,13 @@ export default function ContactSection() {
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 text-foreground placeholder-muted-foreground"
-                      placeholder="What&apos;s this about?"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-secondary border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 text-foreground placeholder-muted-foreground text-sm sm:text-base"
+                      placeholder="What's this about?"
                     />
                   </div>
 
                   <div className="flex-1 flex flex-col">
-                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                    <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-foreground mb-2">
                       Message *
                     </label>
                     <textarea
@@ -301,7 +301,7 @@ export default function ContactSection() {
                       value={formData.message}
                       onChange={handleInputChange}
                       required
-                      className="flex-1 w-full px-4 py-3 bg-secondary border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 text-foreground placeholder-muted-foreground resize-none min-h-[120px]"
+                      className="flex-1 w-full px-3 sm:px-4 py-2 sm:py-3 bg-secondary border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200 text-foreground placeholder-muted-foreground resize-none min-h-[100px] sm:min-h-[120px] text-sm sm:text-base"
                       placeholder="Tell me about your project, idea, or just say hello!"
                     />
                   </div>

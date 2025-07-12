@@ -89,13 +89,13 @@ export default function HeroSection() {
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-purple-500/10 blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-blue-500/5 blur-3xl" />
+        <div className="absolute -top-20 -right-20 sm:-top-40 sm:-right-40 w-40 h-40 sm:w-80 sm:h-80 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute -bottom-20 -left-20 sm:-bottom-40 sm:-left-40 w-40 h-40 sm:w-80 sm:h-80 rounded-full bg-purple-500/10 blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-96 sm:h-96 rounded-full bg-blue-500/5 blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-screen py-20 lg:py-0">
           {/* Left Content */}
           <motion.div
             className="text-center lg:text-left"
@@ -111,10 +111,10 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Main Heading */}
-            <motion.div variants={itemVariants} className="mt-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-heading text-foreground leading-tight">
+            <motion.div variants={itemVariants} className="mt-4 sm:mt-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-foreground leading-tight">
                 I&apos;m a{" "}
-                <span className="text-gradient">
+                <span className="text-gradient inline">
                   {isMounted ? (
                     <Typed
                       strings={["Data Scientist", "AI Engineer", "ML Engineer", "Software Engineer"]}
@@ -131,19 +131,19 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Tech Stack */}
-            <motion.div variants={itemVariants} className="mt-6">
-              <div className="border-t-2 border-b-2 border-primary/30 py-4 inline-block">
-                <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
+            <motion.div variants={itemVariants} className="mt-4 sm:mt-6">
+              <div className="border-t-2 border-b-2 border-primary/30 py-3 sm:py-4 inline-block w-full max-w-lg mx-auto lg:mx-0">
+                <div className="flex flex-nowrap gap-1 sm:gap-2 justify-center lg:justify-start overflow-x-auto">
                   {techStack.map((tech, index) => (
                     <motion.span
                       key={tech}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 1 + index * 0.1 }}
-                      className="text-primary font-medium text-lg tracking-wide"
+                      className="text-primary font-medium text-sm sm:text-base tracking-wide whitespace-nowrap"
                     >
                       {tech}
-                      {index < techStack.length - 1 && <span className="text-muted-foreground mx-2">|</span>}
+                      {index < techStack.length - 1 && <span className="text-muted-foreground mx-1">|</span>}
                     </motion.span>
                   ))}
                 </div>
@@ -155,25 +155,25 @@ export default function HeroSection() {
             {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
-              className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start max-w-md mx-auto lg:mx-0"
             >
               <motion.a
                 href="mailto:arijit.samal@student-cs.fr"
-                className="btn-primary flex items-center justify-center gap-2 text-lg px-8 py-4"
+                className="btn-primary flex items-center justify-center gap-2 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Mail className="h-5 w-5" />
+                <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
                 Hire Me
               </motion.a>
               
               <motion.button
                 onClick={handleDownloadCV}
-                className="btn-outline flex items-center justify-center gap-2 text-lg px-8 py-4"
+                className="btn-outline flex items-center justify-center gap-2 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Download className="h-5 w-5" />
+                <Download className="h-4 w-4 sm:h-5 sm:w-5" />
                 Download CV
               </motion.button>
             </motion.div>
@@ -223,13 +223,13 @@ export default function HeroSection() {
                   ease: "easeInOut",
                 }}
               >
-                <div className="relative w-96 h-96 sm:w-[450px] sm:h-[450px] lg:w-[500px] lg:h-[500px]">
+                <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] xl:w-[500px] xl:h-[500px]">
                   {/* Simple Glow Effect */}
                   <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl scale-110" />
                   
                   {/* Simple Circle Container */}
                   <motion.div 
-                    className="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-primary/30"
+                    className="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-2 sm:border-4 border-primary/30"
                     whileHover={{
                       scale: 1.05,
                     }}
@@ -241,7 +241,7 @@ export default function HeroSection() {
                       fill
                       className="object-cover rounded-full"
                       priority
-                      sizes="(max-width: 640px) 384px, (max-width: 768px) 450px, 500px"
+                      sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, (max-width: 1024px) 384px, (max-width: 1280px) 450px, 500px"
                     />
                   </motion.div>
                 </div>
@@ -252,19 +252,19 @@ export default function HeroSection() {
 
         {/* Scroll Indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2, duration: 0.6 }}
         >
           <motion.button
             onClick={scrollToNext}
-            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+            className="flex flex-col items-center gap-1 sm:gap-2 text-muted-foreground hover:text-primary transition-colors group"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <span className="text-sm font-medium">Scroll Down</span>
-            <ChevronDown className="h-6 w-6 group-hover:scale-110 transition-transform" />
+            <span className="text-xs sm:text-sm font-medium">Scroll Down</span>
+            <ChevronDown className="h-5 w-5 sm:h-6 sm:w-6 group-hover:scale-110 transition-transform" />
           </motion.button>
         </motion.div>
       </div>

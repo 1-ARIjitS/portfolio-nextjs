@@ -82,7 +82,7 @@ export default function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -213,7 +213,7 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="lg:hidden bg-background/95 backdrop-blur-md border-b border-border"
           >
-            <div className="px-4 pt-2 pb-6 space-y-2">
+            <div className="px-4 pt-2 pb-4 sm:pb-6 space-y-1 sm:space-y-2">
               {navigation.map((item) => (
                 <motion.div
                   key={item.name}
@@ -229,7 +229,7 @@ export default function Navbar() {
                       scrollToSection(item.href);
                     }}
                     className={cn(
-                      "block px-4 py-3 text-base font-medium rounded-lg transition-colors",
+                      "block px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base font-medium rounded-lg transition-colors",
                       activeSection === item.href.slice(1)
                         ? "bg-primary text-primary-foreground"
                         : "text-muted-foreground hover:text-foreground hover:bg-secondary"
@@ -240,10 +240,10 @@ export default function Navbar() {
                 </motion.div>
               ))}
               
-              <div className="pt-4">
+              <div className="pt-3 sm:pt-4">
                 <button
                   onClick={handleDownloadCV}
-                  className="w-full btn-primary flex items-center justify-center gap-2"
+                  className="w-full btn-primary flex items-center justify-center gap-2 text-sm sm:text-base py-2 sm:py-3"
                 >
                   <Download className="h-4 w-4" />
                   Download CV
