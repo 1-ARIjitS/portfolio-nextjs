@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Bot, Trophy, Target, Brain, Zap, Award, Code, Calendar, ExternalLink } from "lucide-react";
+import { Github, Bot, Trophy, Target, Brain, Zap, Award } from "lucide-react";
 import ProjectSlider from "@/components/ui/ProjectSlider";
 
 const projectsData = [

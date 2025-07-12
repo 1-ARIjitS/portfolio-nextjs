@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence, PanInfo } from "framer-motion";
 import { ChevronLeft, ChevronRight, Calendar, ExternalLink, Github, Code, Award, Zap } from "lucide-react";
 
@@ -19,7 +19,7 @@ interface Project {
     consumerApp?: string;
     vendorApp?: string;
   };
-  icon: any;
+  icon: React.ComponentType<{ className?: string }>;
   color: string;
   type: string;
   image?: string;
@@ -55,7 +55,7 @@ export default function ProjectSlider({ projects }: ProjectSliderProps) {
     return Math.abs(offset) * velocity;
   };
 
-  const paginate = (newDirection: number) => {
+  const paginate = useCallback((newDirection: number) => {
     setDirection(newDirection);
     setCurrentIndex((prevIndex) => {
       if (newDirection === 1) {
@@ -64,14 +64,14 @@ export default function ProjectSlider({ projects }: ProjectSliderProps) {
         return prevIndex === 0 ? projects.length - 1 : prevIndex - 1;
       }
     });
-  };
+  }, [projects.length]);
 
   const goToSlide = (index: number) => {
     setDirection(index > currentIndex ? 1 : -1);
     setCurrentIndex(index);
   };
 
-  const handleDragEnd = (e: any, { offset, velocity }: PanInfo) => {
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, { offset, velocity }: PanInfo) => {
     const swipe = swipePower(offset.x, velocity.x);
 
     if (swipe < -swipeConfidenceThreshold) {
@@ -88,7 +88,7 @@ export default function ProjectSlider({ projects }: ProjectSliderProps) {
     }, 8000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [paginate]);
 
   const currentProject = projects[currentIndex];
   const Icon = currentProject.icon;
