@@ -21,7 +21,9 @@ const skills = [
   { name: "Data Analytics", icon: Database },
   { name: "Data Visualization", icon: Database },
   { name: "OpenCV", icon: Brain },
-  { name: "Langchain", icon: Zap },
+  { name: "Langchain", icon: Brain },
+  { name: "Agents", icon: Brain },
+  { name: "LangGraph", icon: Brain },
   { name: "Streamlit", icon: Zap },
   { name: "LLM", icon: Brain },
   { name: "SQL", icon: Database },
@@ -37,7 +39,7 @@ const skills = [
   { name: "Cypher", icon: Database },
   { name: "Neo4J", icon: Database },
   { name: "GraphDB", icon: Database },
-  { name: "OrientDB", icon: Database },
+  { name: "OrientDB", icon: Database }
 ];
 
 export default function AboutSection() {
