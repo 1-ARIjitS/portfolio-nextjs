@@ -16,8 +16,8 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+33 075028593",
-    href: "tel:+33075028593",
+    value: "+33 07 55 02 85 93",
+    href: "tel:+33 0755028593",
     color: "from-green-500 to-green-600",
   },
   {
