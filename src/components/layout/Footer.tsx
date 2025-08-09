@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Award } from "lucide-react";
+import { Github, Linkedin, Mail, Award, GraduationCap } from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "#home" },
@@ -24,6 +24,11 @@ const socialLinks = [
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/arijit-samal1",
     icon: Linkedin,
+  },
+  {
+    name: "Google Scholar",
+    href: "https://scholar.google.com/citations?user=ePzEMRMAAAAJ&hl=en&authuser=1",
+    icon: GraduationCap,
   },
   {
     name: "Devpost",

@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronDown, Download, Mail, Github, Linkedin, Award } from "lucide-react";
+import { ChevronDown, Download, Mail, Github, Linkedin, Award, GraduationCap } from "lucide-react";
 import { ReactTyped as Typed } from "react-typed";
 
 const socialLinks = [
@@ -18,6 +18,12 @@ const socialLinks = [
     href: "https://www.linkedin.com/in/arijit-samal1",
     icon: Linkedin,
     color: "hover:text-blue-600",
+  },
+  {
+    name: "Google Scholar",
+    href: "https://scholar.google.com/citations?user=ePzEMRMAAAAJ&hl=en&authuser=1",
+    icon: GraduationCap,
+    color: "hover:text-blue-700",
   },
   {
     name: "Devpost",

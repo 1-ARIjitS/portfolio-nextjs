@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Award, CheckCircle, AlertCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Award, CheckCircle, AlertCircle, GraduationCap } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
 const contactInfo = [
@@ -41,6 +41,12 @@ const socialLinks = [
     href: "https://www.linkedin.com/in/arijit-samal1",
     icon: Linkedin,
     color: "hover:text-blue-600",
+  },
+  {
+    name: "Google Scholar",
+    href: "https://scholar.google.com/citations?user=ePzEMRMAAAAJ&hl=en&authuser=1",
+    icon: GraduationCap,
+    color: "hover:text-blue-700",
   },
   {
     name: "Devpost",
