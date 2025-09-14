@@ -18,11 +18,8 @@ const publicationsData = [
     status: "Published",
     description: "Co-authored paper as part of Bachelor's thesis, developing real-time temperature tracking in crowded environments using edge devices.",
     achievements: [
-      "Developed innovative non-invasive temperature monitoring system",
-      "Successfully implemented real-time temperature estimation for crowded environments",
-      "Created robust solution for dense settings like movie theaters and classrooms",
-      "Released dataset and programming code publicly for research community",
-      "Demonstrated effectiveness in both sparse and dense environmental settings",
+      "Developed and deployed a real-time temperature tracking system in dense environments using edge devices",
+      "Achieved 94% thermal face detection accuracy and R2 score of 0.96 in real-time temperature estimation"
     ],
     abstract: `Non-invasive temperature monitoring of individuals plays a crucial role in identifying and isolating symptomatic individuals. Temperature monitoring becomes particularly vital in settings characterized by close human proximity, often referred to as dense settings. However, existing research on non-invasive temperature estimation using thermal cameras has predominantly focused on sparse settings. Unfortunately, the risk of disease transmission is significantly higher in dense settings like movie theaters or classrooms. Consequently, there is an urgent need to develop robust temperature estimation methods tailored explicitly for dense settings.
 
