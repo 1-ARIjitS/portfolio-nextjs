@@ -8,7 +8,7 @@ const educationData = [
   {
     id: "bdma",
     title: "Erasmus Mundus Masters in Big Data Management and Analytics (BDMA)",
-    period: "2023 – Present",
+    period: "2023 – 2025",
     type: "Masters Program",
     logo: "/images/bdma-logo.png",
     semesters: [
