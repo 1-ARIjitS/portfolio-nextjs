@@ -172,7 +172,7 @@ export default function HeroSection() {
                 <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
                 Hire Me
               </motion.a>
-              
+
               <motion.button
                 onClick={handleDownloadCV}
                 className="btn-outline flex items-center justify-center gap-2 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
@@ -230,12 +230,12 @@ export default function HeroSection() {
                 }}
               >
                 <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[450px] lg:h-[450px] xl:w-[500px] xl:h-[500px]">
-                  {/* Simple Glow Effect */}
-                  <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl scale-110" />
-                  
+                  {/* Simple Glow Effect Removed as requested */}
+
+
                   {/* Simple Circle Container */}
-                  <motion.div 
-                    className="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-2 sm:border-4 border-primary/30"
+                  <motion.div
+                    className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl"
                     whileHover={{
                       scale: 1.05,
                     }}
@@ -245,7 +245,7 @@ export default function HeroSection() {
                       src="/images/new_1.jpeg"
                       alt="Arijit Samal - Data Scientist & AI Engineer"
                       fill
-                      className="object-cover rounded-full"
+                      className="object-cover rounded-3xl"
                       priority
                       sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, (max-width: 1024px) 384px, (max-width: 1280px) 450px, 500px"
                     />
