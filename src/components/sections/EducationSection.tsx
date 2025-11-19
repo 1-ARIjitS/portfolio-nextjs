@@ -9,7 +9,7 @@ const educationData = [
     id: "bdma",
     title: "Erasmus Mundus Masters in Big Data Management and Analytics (BDMA)",
     period: "2023 – 2025",
-    type: "Masters Program",
+    type: "Master's Degree",
     logo: "/images/bdma-logo.png",
     semesters: [
       {
@@ -27,7 +27,7 @@ const educationData = [
         logo: "/images/upc-logo.png",
       },
       {
-        semester: "Semester 3",
+        semester: "Semester 3 and Semester 4",
         university: "CentraleSupélec (CS), Université Paris-Saclay",
         location: "Paris, France",
         degree: "M2 in BDMA",
