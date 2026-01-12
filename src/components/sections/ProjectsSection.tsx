@@ -9,7 +9,7 @@ const projectsData = [
     id: "oasis-os",
     title: "OASIS OS",
     period: "2024",
-    category: "Agents, GUI-Automation, LLM, GEN-AI, ",
+    category: "Agents, GUI-Automation, LLM, GEN-AI",
     status: "Completed", 
     description: "Intelligent Workflow Automation Platform that transforms workspaces with AI-powered automation. Teach OASIS OS your workflows once, and watch it handle repetitive tasks forever. Features teach mode recording, cross-platform GUI automation, and modern web interface.",
     technologies: ["Python", "Next.js", "FastAPI", "GPT-4.1", "Groq", "Ollama", "whisper", "TypeScript", "LangGraph", "LangChain"],
@@ -140,17 +140,20 @@ const projectsData = [
 
 export default function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 lg:py-32 bg-secondary/10">
+    <section id="projects" className="py-16 sm:py-20 lg:py-32 bg-secondary/10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="heading-lg text-foreground mb-4">Featured Projects</h2>
+          <h2 className="heading-lg text-foreground mb-3 sm:mb-4">Featured Projects</h2>
+          <p className="text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto">
+            A showcase of my work in AI, Machine Learning, and Software Engineering
+          </p>
         </motion.div>
 
         {/* Project Slider */}
@@ -165,7 +168,7 @@ export default function ProjectsSection() {
 
         {/* View More Section */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-10 sm:mt-12 lg:mt-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -175,15 +178,15 @@ export default function ProjectsSection() {
             href="https://github.com/1-ARIjitS?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-primary flex items-center gap-2 mx-auto w-fit"
+            className="btn-primary inline-flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Github className="h-5 w-5" />
-            View More Projects on GitHub
+            <Github className="h-4 w-4 sm:h-5 sm:w-5" />
+            <span className="text-sm sm:text-base">View More Projects on GitHub</span>
           </motion.a>
         </motion.div>
       </div>
     </section>
   );
-} 
+}
