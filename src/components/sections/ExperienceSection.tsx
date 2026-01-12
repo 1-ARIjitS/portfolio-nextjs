@@ -19,7 +19,7 @@ const experienceData = [
     description: "Building a multi-agent system to fix alerts in the data equity referential pipeline of CFM which is an essential part of the intraday trading workflows.",
     technologies: ["Python", "OracleDB", "LangChain", "LangGraph", "Google ADK", "FastAPI", "Streamlit"],
     achievements: [
-      "Built a multi-agent system to auto resolve data pipeline alerts for the Data Referential Equity team",
+      "Built a multi-agent system to auto resolve data pipeline alerts for the Data Referential Equity team (Paper Published at AAMAS 2026)",
       "Engineered an ensemble RAG pipeline (Graph RAG, RAPTOR, hybrid search, reranking, Agentic RAG)",
       "Created autonomous coding agents using ReWOO, LLMCompiler, and LATS planners",
       "Implemented an agentic swarm orchestration with dynamic handoffs between agents",

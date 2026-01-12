@@ -19,21 +19,21 @@ const educationData = [
         university: "Université libre de Bruxelles (ULB)",
         location: "Brussels, Belgium",
         degree: "MS in Computer Science",
-        logo: "/images/ulb-logo.png",
+        logo: "/logos/ulb_logo.svg",
       },
       {
         semester: "Semester 2",
         university: "Universitat Politècnica de Catalunya (UPC)",
         location: "Barcelona, Spain",
         degree: "MS in BDMA",
-        logo: "/images/upc-logo.png",
+        logo: "/logos/upc_logo.png",
       },
       {
         semester: "Semester 3 and Semester 4",
         university: "CentraleSupélec (CS), Université Paris-Saclay",
         location: "Paris, France",
-        degree: "M2 in BDMA",
-        logo: "/images/cs-logo.jpg",
+        degree: "MS in Data Science and AI",
+        logo: "/logos/cs_logo.png",
       },
     ],
 
@@ -106,12 +106,12 @@ export default function EducationSection() {
                   <div className="flex flex-col gap-5 sm:gap-6 lg:gap-8">
                     {/* Header Section */}
                     <div className="flex items-start gap-3 sm:gap-4 lg:gap-6">
-                      <div className="relative w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 flex-shrink-0 rounded-xl overflow-hidden bg-white shadow-md">
+                      <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex-shrink-0 rounded-xl overflow-hidden bg-white dark:bg-white shadow-lg border border-border/20">
                         <Image
                           src={education.logo}
                           alt={`${education.title} logo`}
                           fill
-                          className="object-contain p-1"
+                          className="object-contain p-2 sm:p-2.5"
                         />
                       </div>
                       <div className="flex-1 min-w-0">
@@ -151,12 +151,12 @@ export default function EducationSection() {
                               transition={{ delay: 0.1 * semIndex }}
                               viewport={{ once: true }}
                             >
-                              <div className="relative w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex-shrink-0 rounded-lg overflow-hidden bg-white shadow-sm">
+                              <div className="relative w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 flex-shrink-0 rounded-lg overflow-hidden bg-white dark:bg-white shadow-md border border-border/20">
                                 <Image
                                   src={semester.logo}
                                   alt={`${semester.university} logo`}
                                   fill
-                                  className="object-contain p-1"
+                                  className={`object-contain ${semester.logo.includes('cs_logo') ? 'p-0 scale-110' : 'p-2 sm:p-2.5'}`}
                                 />
                               </div>
                               <div className="flex-1 min-w-0">
