@@ -8,7 +8,7 @@ const experienceData = [
     id: "cfm",
     company: "Capital Fund Management (CFM)",
     position: "Data Scientist",
-    period: "March 2025 – Present",
+    period: "March 2025 – November 2025",
     location: "Paris, Ile de France, France",
     type: "Hedge Fund",
     link: "https://drive.google.com/drive/folders/1mUPAEHbxKvdkxgp87eiV67TQ2tfahEme?usp=drive_link",
